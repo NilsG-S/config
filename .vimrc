@@ -31,7 +31,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unmerged"  : "=",
     \ "Deleted"   : "-",
     \ "Dirty"     : "$",
-    \ "Clean"     : "#",
+    \ "Clean"     : "%",
     \ 'Ignored'   : "_",
     \ "Unknown"   : "?"
     \ }
