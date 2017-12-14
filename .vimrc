@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
 
 " Colors
 Plugin 'dracula/vim'
@@ -23,9 +24,9 @@ color dracula
 syntax on
 
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
+    \ "Modified"  : "~",
     \ "Staged"    : "+",
-    \ "Untracked" : "~",
+    \ "Untracked" : "!",
     \ "Renamed"   : "->",
     \ "Unmerged"  : "=",
     \ "Deleted"   : "-",
@@ -43,3 +44,6 @@ set textwidth=79
 set autoindent
 set fileformat=unix
 set encoding=utf-8
+
+" Settings
+set updatetime=250
