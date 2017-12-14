@@ -22,6 +22,19 @@ let python_highlight_all=1
 color dracula
 syntax on
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "~",
+    \ "Renamed"   : "->",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "$",
+    \ "Clean"     : "#",
+    \ 'Ignored'   : '_',
+    \ "Unknown"   : "?"
+    \ }
+
 " Editor
 set tabstop=4
 set softtabstop=4
