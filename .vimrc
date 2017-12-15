@@ -1,27 +1,22 @@
-" Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" VIM-Plug
+call plug#begin('~/.vim/plugged')
 
-" Manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 
 " Colors
-Plugin 'dracula/vim'
+Plug 'dracula/vim'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
+" Automatically executes:
+" - `filetype plugin indent on`
+" - `syntax enable`
 
 " UI
 set number
 let python_highlight_all=1
 color dracula
-syntax on
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "~",
@@ -46,4 +41,4 @@ set fileformat=unix
 set encoding=utf-8
 
 " Settings
-set updatetime=250
+set updatetime=4000
