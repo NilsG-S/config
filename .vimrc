@@ -5,7 +5,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 
 " Colors
-Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 " Automatically executes:
@@ -15,7 +15,8 @@ call plug#end()
 " UI
 set number
 let python_highlight_all=1
-color dracula
+set background=dark
+colorscheme gruvbox
 
 " Editor
 set tabstop=4
