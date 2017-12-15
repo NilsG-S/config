@@ -12,6 +12,10 @@ Plug 'haya14busa/incsearch.vim'
         Plug 'godlygeek/tabular'
         Plug 'plasticboy/vim-markdown'
 
+        " ### Python
+        " still doesn't support virtualenv
+        Plug 'davidhalter/jedi-vim'
+
     " ## Colors
     Plug 'morhetz/gruvbox'
 
