@@ -36,18 +36,8 @@ let g:ycm_python_binary_path = 'python'
 
 " # UI
 set number
-let python_highlight_all=1
 set background=dark
 colorscheme gruvbox
-
-" # Editor
-set tabstop=4
-set softtabstop=4
-set expandtab
-set textwidth=79
-set autoindent
-set fileformat=unix
-set encoding=utf-8
 
 " # Mapping
 map / <Plug>(incsearch-forward)
