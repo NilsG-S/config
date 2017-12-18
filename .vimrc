@@ -4,6 +4,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/incsearch.vim'
+" Requirements:
+" - `sudo apt-get install build-essential cmake`
+" - `sudo apt-get install python-dev python3-dev`
+" - run `install.py` on YouCompleteMe with various completer options
+" See: https://github.com/Valloric/YouCompleteMe
+Plug 'Valloric/YouCompleteMe'
 
     " ## File Types
 
@@ -11,10 +17,6 @@ Plug 'haya14busa/incsearch.vim'
         " required for vim-markdown
         Plug 'godlygeek/tabular'
         Plug 'plasticboy/vim-markdown'
-
-        " ### Python
-        " still doesn't support virtualenv
-        Plug 'davidhalter/jedi-vim'
 
     " ## Colors
     Plug 'morhetz/gruvbox'
