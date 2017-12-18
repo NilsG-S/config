@@ -31,6 +31,12 @@ call plug#end()
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
 
+" NERDTree
+let NERDTreeShowHidden=1
+" Open automatically if no file specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
         " vim-markdown
         let g:vim_markdown_folding_disabled = 1
 
