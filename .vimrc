@@ -26,9 +26,12 @@ Plug 'Valloric/YouCompleteMe'
 " - `syntax enable`
 call plug#end()
 
-    " ## Plugin Configuration
+" # Plugin Configuration
 
-        " ### vim-markdown
+" YouCompleteMe
+let g:ycm_python_binary_path = 'python'
+
+        " vim-markdown
         let g:vim_markdown_folding_disabled = 1
 
 " # UI
