@@ -8,6 +8,7 @@ Plug 'haya14busa/incsearch.vim'
 " - `sudo apt-get install build-essential cmake`
 " - `sudo apt-get install python-dev python3-dev`
 " - run `install.py` on YouCompleteMe with various completer options
+" - Note: some languages (e.g. JavaScript) may require additional configuration
 " See: https://github.com/Valloric/YouCompleteMe
 Plug 'Valloric/YouCompleteMe'
 
@@ -30,6 +31,7 @@ call plug#end()
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
+set completeopt-=preview
 
 " NERDTree
 let NERDTreeShowHidden=1
