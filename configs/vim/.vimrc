@@ -10,7 +10,12 @@ Plug 'haya14busa/incsearch.vim'
 " - run `install.py` on YouCompleteMe with various completer options
 " - Note: some languages (e.g. JavaScript) may require additional configuration
 " See: https://github.com/Valloric/YouCompleteMe
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 
     " ## File Types
 
@@ -18,6 +23,9 @@ Plug 'Valloric/YouCompleteMe'
         " required for vim-markdown
         Plug 'godlygeek/tabular'
         Plug 'plasticboy/vim-markdown'
+	
+	" ### Go
+	Plug 'fatih/vim-go'
 
     " ## Colors
     Plug 'morhetz/gruvbox'
@@ -30,8 +38,11 @@ call plug#end()
 " # Plugin Configuration
 
 " YouCompleteMe
-let g:ycm_python_binary_path = 'python'
-set completeopt-=preview
+" let g:ycm_python_binary_path = 'python'
+" set completeopt-=preview
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " NERDTree
 let NERDTreeShowHidden=1
