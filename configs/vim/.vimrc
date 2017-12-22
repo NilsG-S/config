@@ -43,6 +43,8 @@ call plug#end()
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+set pyxversion=3
+set encoding=utf-8
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -65,3 +67,4 @@ map g/ <Plug>(incsearch-stay)
 
 " # Settings
 set updatetime=4000
+
