@@ -23,3 +23,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Run GoInstallBinaries within Vim
+# Have to run `pip install neovim` for the appropriate version of Python
+
