@@ -15,8 +15,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
-Plug 'zchee/deoplete-go', { 'do': 'make' }
-
     " ## File Types
 
         " ### Markdown
@@ -26,6 +24,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make' }
 	
 	" ### Go
 	Plug 'fatih/vim-go'
+	Plug 'zchee/deoplete-go', { 'do': 'make' }
 
     " ## Colors
     Plug 'morhetz/gruvbox'
@@ -39,11 +38,11 @@ call plug#end()
 
 " YouCompleteMe
 " let g:ycm_python_binary_path = 'python'
-" set completeopt-=preview
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_yarp=1
+set completeopt-=preview
 set pyxversion=3
 set encoding=utf-8
 
@@ -55,6 +54,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
         " vim-markdown
         let g:vim_markdown_folding_disabled = 1
+
+	" deoplete-go
+	let g:deoplete#sources#go#gocode_binary='~/go/bin/gocode'
+	let g:deoplete#sources#go#package_dot=0
+	let g:deoplete#sources#go#sort_class=['package', 'func', 'type', 'var', 'const']
+	let g:deoplete#sources#go#pointer=0
+	let g:deoplete#sources#go#cgo=0
 
 " # UI
 set number
