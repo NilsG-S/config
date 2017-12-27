@@ -14,6 +14,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'vim-syntastic/syntastic'
 
     " ## File Types
 
@@ -46,6 +47,20 @@ set completeopt-=preview
 set pyxversion=3
 set encoding=utf-8
 
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" prevents vim-go and syntastic from colliding
+let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 " NERDTree
 let NERDTreeShowHidden=1
 " Open automatically if no file specified
@@ -61,6 +76,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 	let g:deoplete#sources#go#sort_class=['package', 'func', 'type', 'var', 'const']
 	let g:deoplete#sources#go#pointer=0
 	let g:deoplete#sources#go#cgo=0
+
+	" vim-go
+	let g:go_metalinter_autosave = 0
 
 " # UI
 set number
