@@ -80,6 +80,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 	" vim-go
 	let g:go_metalinter_autosave = 0
 
+" # Editor
+set backspace=indent,eol,start
+
 " # UI
 set number
 set background=dark
