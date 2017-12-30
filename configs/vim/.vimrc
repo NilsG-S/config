@@ -4,13 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/incsearch.vim'
-" Requirements:
-" - `sudo apt-get install build-essential cmake`
-" - `sudo apt-get install python-dev python3-dev`
-" - run `install.py` on YouCompleteMe with various completer options
-" - Note: some languages (e.g. JavaScript) may require additional configuration
-" See: https://github.com/Valloric/YouCompleteMe
-" Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -37,8 +30,10 @@ call plug#end()
 
 " # Plugin Configuration
 
-" YouCompleteMe
-" let g:ycm_python_binary_path = 'python'
+" incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -89,9 +84,12 @@ set background=dark
 colorscheme gruvbox
 
 " # Mapping
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ` ``<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
 
 " # Settings
 set updatetime=4000
