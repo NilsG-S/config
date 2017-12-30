@@ -8,6 +8,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'vim-syntastic/syntastic'
+Plug 'jiangmiao/auto-pairs'
 
     " ## File Types
 
@@ -82,36 +83,6 @@ set backspace=indent,eol,start
 set number
 set background=dark
 colorscheme gruvbox
-
-" # Functions
-function RParenMiddleware()
-  let cur_line = getline('.')
-  let cur_char = cur_line[col('.') - 1]
-
-  if cur_char == ')'
-    let cur_pos = getpos('.')
-
-    let cur_pos[2] = cur_pos[2] + 1
-
-    call setpos('.', cur_pos)
-  else
-    let cur_len = strlen(cur_line)
-    let cur_col = col('.') - 1
-    let begin = strpart(cur_line, 0, cur_col)
-    let end = strpart(cur_line, cur_col, cur_len - cur_col)
-
-    call setline('.', begin . ')' . end)
-  endif
-endfunction
-
-" # Mapping
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
-inoremap ( ()<left>
-inoremap ) <C-o>:call RParenMiddleware()<CR>
-inoremap { {}<left>
-inoremap [ []<left>
 
 " # Settings
 set updatetime=4000
