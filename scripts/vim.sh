@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install Vim from source
 cd ~
 mkdir software
