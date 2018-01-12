@@ -86,4 +86,4 @@ colorscheme gruvbox
 
 " # Settings
 set updatetime=4000
-
+set nocompatible
