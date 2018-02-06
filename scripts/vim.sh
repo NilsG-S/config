@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Creating `software` directory...\n"
+echo -e "Creating \`software\` directory...\n"
 
 su nils
 cd ~
@@ -8,20 +8,20 @@ mkdir software
 cd software
 
 echo -e "...Done\n"
-echo -e "Installing `ncurses-dev` and `python3-pip`...\n"
+echo -e "Installing \`ncurses-dev\` and \`python3-pip\`...\n"
 
 sudo su
 apt install -y ncurses-dev python3-pip
 
 echo -e "...Done\n"
-echo -e "Installing `neovim`...\n"
+echo -e "Installing \`neovim\`...\n"
 
 su nils
 pip3 install --upgrade pip
 pip3 install neovim
 
 echo -e "...Done\n"
-echo -e "Installing `Vim`...\n"
+echo -e "Installing \`Vim\`...\n"
 
 # Install Vim from source
 git clone https://github.com/vim/vim.git
@@ -62,7 +62,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Have to run `pip install neovim` for the appropriate version of Python
 
 echo -e "...Done\n"
-echo -e "Configuring `Vim`...\n"
+echo -e "Configuring \`Vim\`...\n"
 
 if [! -f ~/config/configs/vim/.vimrc] ; then
   echo "No configuration found"
