@@ -6,22 +6,22 @@ cd ~
 sudo -u nils mkdir software
 cd software
 
-echo -e "...Done\n"
+echo -e "\n...Done"
 echo -e "Installing \`ncurses-dev\` and \`python3-pip\`...\n"
 
 apt install -y ncurses-dev python3-pip
 
-echo -e "...Done\n"
+echo -e "\n...Done"
 echo -e "Upgrading \`Pip\`...\n"
 
 pip3 install --upgrade pip
 
-echo -e "...Done\n"
+echo -e "\n...Done"
 echo -e "Installing \`neovim\`...\n"
 
 pip3 install neovim
 
-echo -e "...Done\n"
+echo -e "\n...Done"
 echo -e "Installing \`Vim\`...\n"
 
 # Install Vim from source
@@ -56,10 +56,7 @@ cd ~
 sudo -u nils curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Run GoInstallBinaries within Vim
-# Have to run `pip install neovim` for the appropriate version of Python
-
-echo -e "...Done\n"
+echo -e "\n...Done"
 echo -e "Configuring \`Vim\`...\n"
 
 if [ ! -f ~/config/configs/vim/.vimrc ] ; then
@@ -70,4 +67,8 @@ fi
 sudo -u nils cp ~/config/configs/vim/.vimrc ~/.vimrc
 sudo -u nils cp -r ~/config/configs/vim/.vim ~/
 
-echo -e "...Done\n"
+echo -e "\n...Done\n"
+
+echo "Don't forget to run the following commands within Vim:" 
+echo "- PlugInstall"
+echo "- GoInstallBinaries"
