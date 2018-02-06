@@ -26,9 +26,11 @@ echo -e "Installing `Vim`...\n"
 # Install Vim from source
 git clone https://github.com/vim/vim.git
 cd vim
+# Checking out specific release version
 git checkout tags/v8.0.1473 -b install
+# Computing checksum for release version
 git archive --format=tar -o ../check.tar.gz install
-sha=$(sudo git archive --format=tar install | sha256sum)
+sha=$(git archive --format=tar install | sha256sum)
 found=$(grep -q 126cdf283ef7ebd8dc9aa13dd68fbd2aad4bfab75deb443eeba5606edf23ac14 <<< "$sha")
 
 if !found; then
@@ -36,6 +38,7 @@ if !found; then
   exit 1
 fi
 
+sudo su
 ./configure \
   --with-features=huge \
   --enable-multibyte \
@@ -48,6 +51,7 @@ make
 make install
 # sudo make uninstall to remove
 
+su nils
 cd ~
 # Downloading vim-plug
 # See: https://github.com/junegunn/vim-plug 
@@ -56,5 +60,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # Run GoInstallBinaries within Vim
 # Have to run `pip install neovim` for the appropriate version of Python
+
+echo -e "...Done\n"
+echo -e "Configuring `Vim`...\n"
+
+if [! -f ~/config/configs/vim/.vimrc] ; then
+  echo "No configuration found"
+  exit 1
+fi
+
+cp ~/config/configs/vim/.vimrc ~/.vimrc
+cp -r ~/config/configs/vim/.vim ~/
 
 echo -e "...Done\n"
