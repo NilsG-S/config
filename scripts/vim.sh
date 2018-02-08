@@ -33,7 +33,7 @@ sudo -u nils git checkout tags/v8.0.1473 -b install
 sha=$(git archive --format=tar install | sha256sum)
 found=$(grep -q 126cdf283ef7ebd8dc9aa13dd68fbd2aad4bfab75deb443eeba5606edf23ac14 <<< "$sha")
 
-if [ ! found ]; then
+if [ ! $found ]; then
   echo "Vim source couldn't be verified"
   exit 1
 fi
