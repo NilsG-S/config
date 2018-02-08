@@ -5,13 +5,13 @@ go_sha=a4da5f4c07dfda8194c4621611aeb7ceaab98af0b38bfb29e1be2ebb04c3556c
 dep_file=https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64
 dep_sha=31144e465e52ffbc0035248a10ddea61a09bf28b00784fd3fdd9882c8cbb2315
 
-echo -e "Setting up \`downloads\`...\n"
+echo -e "Setting up \`downloads\`..."
 
 cd ~
 sudo -u nils mkdir -p downloads
 cd downloads
 
-echo -e "\n...Done"
+echo -e "...Done"
 echo -e "Installing \`Go\`...\n"
 
 sudo -u nils curl -o go.tar.gz $go_file
@@ -55,3 +55,5 @@ sudo -u nils chmod +x dep
 mv dep /usr/local/go/bin/dep
 
 echo -e "\n...Done"
+
+echo "Start a new shell to get the updated paths"
