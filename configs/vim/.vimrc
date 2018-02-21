@@ -21,6 +21,9 @@ Plug 'jiangmiao/auto-pairs'
 	Plug 'fatih/vim-go'
 	Plug 'zchee/deoplete-go', { 'do': 'make' }
 
+	" ### JavaScript
+	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
     " ## Colors
     Plug 'morhetz/gruvbox'
 
@@ -61,6 +64,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 	" vim-go
 	let g:go_metalinter_autosave = 0
+
+	" deoplete-ternjs
+	let g:deoplete#sources#ternjs#filetypes = [ 'jsx' ]
 
 " # Editor
 set backspace=indent,eol,start
