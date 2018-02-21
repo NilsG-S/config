@@ -7,7 +7,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
 
     " ## File Types
@@ -42,20 +42,6 @@ let g:deoplete#enable_yarp=1
 set completeopt-=preview
 set pyxversion=3
 set encoding=utf-8
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" prevents vim-go and syntastic from colliding
-let g:syntastic_go_checkers = ['golint', 'govet']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " NERDTree
 let NERDTreeShowHidden=1
