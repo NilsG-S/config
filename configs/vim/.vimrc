@@ -23,6 +23,8 @@ Plug 'jiangmiao/auto-pairs'
 
 	" ### JavaScript
 	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+	Plug 'pangloss/vim-javascript'
+	Plug 'mxw/vim-jsx'
 
     " ## Colors
     Plug 'morhetz/gruvbox'
@@ -67,6 +69,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 	" deoplete-ternjs
 	let g:deoplete#sources#ternjs#filetypes = [ 'jsx' ]
+
+	" vim-javascript
+	let g:javascript_plugin_jsdoc = 1
+
+	" vim-jsx
+	let g:jsx_ext_required = 1
 
 " # Editor
 set backspace=indent,eol,start
