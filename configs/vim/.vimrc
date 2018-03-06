@@ -79,6 +79,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 	" vim-jsx
 	let g:jsx_ext_required = 1
 
+	" deoplete-jedi
+	let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
+
 " # Editor
 set backspace=indent,eol,start
 
