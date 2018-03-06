@@ -26,6 +26,9 @@ Plug 'jiangmiao/auto-pairs'
 	Plug 'pangloss/vim-javascript'
 	Plug 'mxw/vim-jsx'
 
+	" ### Python
+	Plug 'zchee/deoplete-jedi'
+
     " ## Colors
     Plug 'morhetz/gruvbox'
 
