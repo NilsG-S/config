@@ -12,11 +12,6 @@ Plug 'jiangmiao/auto-pairs'
 
     " ## File Types
 
-        " ### Markdown
-        " required for vim-markdown
-        Plug 'godlygeek/tabular'
-        Plug 'plasticboy/vim-markdown'
-	
 	" ### Go
 	Plug 'fatih/vim-go'
 	Plug 'zchee/deoplete-go', { 'do': 'make' }
@@ -26,8 +21,16 @@ Plug 'jiangmiao/auto-pairs'
 	Plug 'pangloss/vim-javascript'
 	Plug 'mxw/vim-jsx'
 
+        " ### Markdown
+        " required for vim-markdown
+        Plug 'godlygeek/tabular'
+        Plug 'plasticboy/vim-markdown'
+
 	" ### Python
 	Plug 'zchee/deoplete-jedi'
+
+	" ### Terraform
+	Plug 'hashivim/vim-terraform'
 
     " ## Colors
     Plug 'morhetz/gruvbox'
@@ -57,8 +60,8 @@ let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-        " vim-markdown
-        let g:vim_markdown_folding_disabled = 1
+	" vim-go
+	let g:go_metalinter_autosave = 0
 
 	" deoplete-go
 	let g:deoplete#sources#go#gocode_binary='~/go/bin/gocode'
@@ -66,9 +69,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 	let g:deoplete#sources#go#sort_class=['package', 'func', 'type', 'var', 'const']
 	let g:deoplete#sources#go#pointer=0
 	let g:deoplete#sources#go#cgo=0
-
-	" vim-go
-	let g:go_metalinter_autosave = 0
 
 	" deoplete-ternjs
 	let g:deoplete#sources#ternjs#filetypes = [ 'jsx' ]
@@ -79,8 +79,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 	" vim-jsx
 	let g:jsx_ext_required = 1
 
+        " vim-markdown
+        let g:vim_markdown_folding_disabled = 1
+
 	" deoplete-jedi
 	let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
+
+        " vim-terraform
+	let g:terraform_align=1
 
 " # Editor
 set backspace=indent,eol,start
