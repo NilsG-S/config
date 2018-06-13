@@ -6,6 +6,7 @@ RUN apt update \
   # Installing dependencies
   && apt install -y \
   git \
+  checkinstall \
   ## VIM general dependencies
   libncurses5-dev \
   libgnome2-dev \
@@ -37,4 +38,5 @@ RUN apt update \
   ## Not interfacing with NetBeans
   --disable-netbeans \
   && make \
-  && make install
+  ## Produces a .deb and installs it
+  && checkinstall
