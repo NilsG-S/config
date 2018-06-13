@@ -37,4 +37,4 @@ RUN apt update \
   ## Not interfacing with NetBeans
   --disable-netbeans \
   && make \
-  && 
+  && make install
