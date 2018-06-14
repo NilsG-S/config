@@ -32,5 +32,15 @@ RUN apt update \
   ## Not interfacing with NetBeans
   --disable-netbeans \
   && make \
-  ## Produces a .deb and installs it
-  && checkinstall
+  ## Producing a .deb
+  && checkinstall \
+  ### Specify to build a .deb
+  -D \
+  ### install & fstrans prevent installation
+  --install=no \
+  --fstrans=yes \
+  ### The following four options affect output file name (vim_1-1_amd64.deb)
+  --pkgname=vim \
+  --pkgversion=1 \
+  --pkgrelease=1 \
+  --pkgarch=amd64
