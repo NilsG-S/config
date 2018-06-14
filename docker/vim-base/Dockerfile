@@ -57,7 +57,6 @@ RUN apt update \
   ## Required by VIM
   libsm6 \
   libxt6 \
-  # TODO(NilsG-S): need ncurses?
   && pip3 install --upgrade pip==9.0.3 \
   ## Required by `deoplete`
   && pip3 install neovim
