@@ -9,14 +9,8 @@ RUN apt update \
   checkinstall \
   ## VIM general dependencies
   libncurses5-dev \
-  libgnome2-dev \
-  libgnomeui-dev \
-  libgtk2.0-dev \
-  libatk1.0-dev \
-  libbonoboui2-dev \
-  libcairo2-dev \
+  ## X11 clipboard?
   libx11-dev \
-  libxpm-dev \
   libxt-dev \
   ## VIM specific dependencies
   python3-dev \
