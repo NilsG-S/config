@@ -45,3 +45,26 @@ RUN cd vim \
   --pkgversion=1 \
   --pkgrelease=1 \
   --pkgarch=amd64
+
+FROM ubuntu:18.04
+
+# Installing dependencies
+RUN apt update \
+  && apt install -y \
+  ## Required by VIM plugins
+  python3 \
+  python3-pip \
+  # TODO(NilsG-S): need ncurses?
+  && pip3 install --upgrade pip==9.0.3 \
+  ## Required by `deoplete`
+  && pip3 install neovim
+
+# Installing VIM
+COPY --from=build /tmp/vim/vim_1-1_amd64.deb /tmp/vim.deb
+RUN dpkg -i /tmp/vim.deb
+
+# TODO(NilsG-S): copy VIM files
+# TODO(NilsG-S): run PlugInstall
+
+# Configures container to run as an executable
+ENTRYPOINT ["vim"]
