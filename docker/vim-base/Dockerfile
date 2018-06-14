@@ -2,8 +2,8 @@ FROM ubuntu:18.04 as build
 
 WORKDIR /tmp
 
+# Installing dependencies
 RUN apt update \
-  # Installing dependencies
   && apt install -y \
   git \
   checkinstall \
@@ -13,10 +13,11 @@ RUN apt update \
   libx11-dev \
   libxt-dev \
   ## VIM specific dependencies
-  python3-dev \
-  # Building vim
-  && git clone https://github.com/vim/vim.git \
-  && cd vim \
+  python3-dev
+# Getting VIM source
+RUN git clone https://github.com/vim/vim.git
+# Building VIM
+RUN cd vim \
   ## Known "good" release
   && git checkout 52d3aaeea4c85406f46e2051729e4f007f83b35e -b build \
   && ./configure \
