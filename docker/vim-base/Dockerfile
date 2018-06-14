@@ -13,9 +13,9 @@ RUN apt update \
   libx11-dev \
   libxt-dev \
   ## VIM specific dependencies
-  python3-dev
-# Getting VIM source
-RUN git clone https://github.com/vim/vim.git
+  python3-dev \
+  ## VIM source
+  && git clone https://github.com/vim/vim.git
 # Building VIM
 RUN cd vim \
   ## Known "good" release
