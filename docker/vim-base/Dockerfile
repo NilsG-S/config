@@ -51,7 +51,10 @@ FROM ubuntu:18.04
 # Installing dependencies
 RUN apt update \
   && apt install -y \
+  ## Required to get `vim-plug`
   curl \
+  ## THIS IS REQUIRED BY `vim-plug`
+  git \
   ## Required by VIM plugins
   python3 \
   python3-pip \
@@ -70,7 +73,7 @@ RUN dpkg -i /tmp/vim.deb
 RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 COPY configs/vim /root/
-# TODO(NilsG-S): run PlugInstall
+RUN vim +PlugInstall +qall
 
 # Configures container to run as an executable
 ENTRYPOINT ["vim"]

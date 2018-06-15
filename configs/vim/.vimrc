@@ -1,5 +1,5 @@
 " # VIM-Plug
-call plug#begin('~/.vim/plugged')
+silent! call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
@@ -95,7 +95,7 @@ set backspace=indent,eol,start
 " # UI
 set number
 set background=dark
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 " # Settings
 set updatetime=4000
