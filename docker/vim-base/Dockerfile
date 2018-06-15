@@ -51,6 +51,7 @@ FROM ubuntu:18.04
 # Installing dependencies
 RUN apt update \
   && apt install -y \
+  curl \
   ## Required by VIM plugins
   python3 \
   python3-pip \
@@ -65,7 +66,10 @@ RUN apt update \
 COPY --from=build /tmp/vim/vim_1-1_amd64.deb /tmp/vim.deb
 RUN dpkg -i /tmp/vim.deb
 
-# TODO(NilsG-S): copy VIM files
+# VIM setup
+RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+COPY configs/vim /root/
 # TODO(NilsG-S): run PlugInstall
 
 # Configures container to run as an executable
