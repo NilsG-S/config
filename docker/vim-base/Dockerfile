@@ -77,5 +77,7 @@ RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs \
 COPY configs/vim /root/
 RUN vim +PlugInstall +qall
 
+WORKDIR /project
+
 # Configures container to run as an executable
 ENTRYPOINT ["vim"]
