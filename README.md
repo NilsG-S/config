@@ -8,5 +8,21 @@
 
 ## Dev Tools
 
-- Building `dev-tools`: `docker build -f .\docker\dev-tools\Dockerfile -t nilsgs/dev-tools .`
-- Running `dev-tools`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/dev-tools -v <ssh/config>:/root/.ssh`
+### Dependencies
+
+- Curl
+- Python 3
+- Pip
+- `sh` Python module
+
+Commands to aquire dependencies:
+
+```
+sudo apt update
+sudo apt install -y python3 python3-pip curl
+sudo pip3 install sh
+```
+
+### Installation
+
+Command: `curl https://raw.githubusercontent.com/NilsG-S/config/master/scripts/dev-tools.py | python3`
