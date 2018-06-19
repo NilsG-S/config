@@ -1,5 +1,6 @@
-import os
 import errno
+import getpass
+import os
 import sh
 
 CONFIG = (
@@ -11,6 +12,9 @@ CONFIG = (
 )
 
 def main():
+    username = getpass.getuser()
+    password = getpass.getpass()
+
     print("Configuring Git...\n")
 
     git_email = input("Enter Git email: ")
@@ -26,6 +30,12 @@ def main():
     with open(filename, "w") as cur:
         cur.write(CONFIG)
 
+    with sh.contrib.sudo(password, _with=True):
+        print("Installing dependencies...")
+
+        sh.apt("install", "-y", "")
+
     print("Remember to add GitHub SSH key!")
 
 main()
+
