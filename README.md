@@ -26,3 +26,7 @@ sudo pip3 install sh
 ### Installation
 
 Command: `curl https://raw.githubusercontent.com/NilsG-S/config/master/scripts/dev-tools.py | python3`
+
+## Dev Tools (Vagrant)
+
+- Remember to setup Git email
