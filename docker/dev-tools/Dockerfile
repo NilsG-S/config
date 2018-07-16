@@ -7,8 +7,10 @@ RUN apt update \
   && apt install -y \
   man \
   git \
-  # Does this include scp?
+  # This includes SCP
   openssh-server
+
+COPY configs/profile/.profile /root/.profile
 
 WORKDIR /project
 
