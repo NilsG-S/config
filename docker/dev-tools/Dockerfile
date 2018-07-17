@@ -19,6 +19,9 @@ COPY configs/ssh/ /root/.ssh/
 RUN chmod 600 /root/.ssh/config \
   && find /root/.ssh -name "id_rsa*" -exec chmod 600 {} \;
 
+# Git configuration
+COPY configs/.gitconfig /root/.gitconfig
+
 WORKDIR /project
 
 # Run container as an executable login shell
