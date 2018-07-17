@@ -14,5 +14,5 @@ COPY configs/profile/.profile /root/.profile
 
 WORKDIR /project
 
-# Configures container to run as an executable
-ENTRYPOINT ["bash"]
+# Run container as an executable login shell
+ENTRYPOINT ["bash", "-l"]
