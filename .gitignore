@@ -9,3 +9,7 @@
 ## SSH
 
 configs/ssh/id_rsa*
+
+## Git
+
+configs/.gitconfig

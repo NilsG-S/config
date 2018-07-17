@@ -8,25 +8,33 @@
 
 ## Dev Tools
 
-### Dependencies
+- Building `dev-tools`: `docker build -f .\docker\dev-tools\Dockerfile -t nilsgs/dev-tools .`
+- Running `dev-tools`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/dev-tools`
 
-- Curl
-- Python 3
-- Pip
-- `sh` Python module
+### Sensitive Files
 
-Commands to aquire dependencies:
+#### `.gitconfig`
+
+- Contains personal email
+- `configs/.gitconfig`
 
 ```
-sudo apt update
-sudo apt install -y python3 python3-pip curl
-sudo pip3 install sh
+[push]
+    default = simple
+[user]
+    email = <email>
+    name = <GitHub username>
 ```
 
-### Installation
+#### GitHub SSH Keys
 
-Command: `curl https://raw.githubusercontent.com/NilsG-S/config/master/scripts/dev-tools.py | python3`
+- Can be used to access GitHub account functionality
+- Naming pattern: `id_rsa*`
 
-## Dev Tools (Vagrant)
+```
+configs/
+  ssh/
+    id_rsa_github
+    id_rsa_github.pub
+```
 
-- Remember to setup Git email

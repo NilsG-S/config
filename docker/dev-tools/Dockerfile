@@ -11,9 +11,13 @@ RUN apt update \
   openssh-server
 
 # Login shell profile
-COPY configs/profile/.profile /root/.profile
+COPY configs/.profile /root/.profile
+
 # SSH configuration
 COPY configs/ssh/ /root/.ssh/
+## Restrict permissions to prevent error
+RUN chmod 600 /root/.ssh/config \
+  && find /root/.ssh -name "id_rsa*" -exec chmod 600 {} \;
 
 WORKDIR /project
 
