@@ -8,6 +8,8 @@
 
 ## Dev Tools
 
+**NEVER MAKE THIS IMAGE PUBLIC**
+
 - Building `dev-tools`: `docker build -f .\docker\dev-tools\Dockerfile -t nilsgs/dev-tools .`
 - Running `dev-tools`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/dev-tools`
 
