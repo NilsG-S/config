@@ -3,3 +3,9 @@
 ## VIM
 *.swp
 *.swo
+
+# Sensitive
+
+## SSH
+
+configs/ssh/id_rsa*

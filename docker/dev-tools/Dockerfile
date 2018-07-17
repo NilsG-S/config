@@ -10,7 +10,10 @@ RUN apt update \
   # This includes SCP
   openssh-server
 
+# Login shell profile
 COPY configs/profile/.profile /root/.profile
+# SSH configuration
+COPY configs/ssh/ /root/.ssh/
 
 WORKDIR /project
 
