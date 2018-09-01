@@ -2,16 +2,20 @@
 
 ## Docker VIM
 
-- Building `vim-base`: `docker build -f .\docker\vim-base\Dockerfile -t nilsgs/vim-base .`
-- Running `vim-base`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/vim-base`
+- Building `vim`: `docker build -f .\docker\vim\Dockerfile -t nilsgs/config:vim .`
+- Running `vim`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/config:vim`
     - `--rm` removes containers after exiting to reduce cleanup
 
 ## Dev Tools
 
 **NEVER MAKE THIS IMAGE PUBLIC**
 
-- Building `dev-tools`: `docker build -f .\docker\dev-tools\Dockerfile -t nilsgs/dev-tools .`
-- Running `dev-tools`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/dev-tools`
+- Building `dev-tools`: `docker build -f .\docker\dev-tools\Dockerfile -t nilsgs/config:dev-tools .`
+- Running `dev-tools`: `docker run -it --rm -v <absolute/host/path>:/project nilsgs/config:dev-tools`
+
+### Variants
+
+- `dev-tools-cpceed-student-app`
 
 ### Sensitive Files
 
@@ -40,3 +44,6 @@ configs/
     id_rsa_github.pub
 ```
 
+## Troubleshooting
+
+- Base image differences between `vim` and `dev-tools` could potentially cause problems with dependencies that are shared on the host. This is because dependencies are not installed the same way on different operating systems.
